@@ -34,14 +34,10 @@ int main()
         printf("mask %s ", ip4addr_ntoa(netif_ip4_netmask(netif_default)));
         printf("gateway %s\n", ip4addr_ntoa(netif_ip4_gw(netif_default)));
 
-        /* mac par defaut ? */
-        // 00:A0:50:B5:59:5E /  { 0x00, 0xA0, 0x50, 0xb5, 0x59, 0x5e };
-
         uint8_t mac[6];
 
         if (!cyw43_wifi_get_mac(&cyw43_state, CYW43_ITF_STA, mac))
         {
-
             printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n",
                    mac[0], mac[1], mac[2],
                    mac[3], mac[4], mac[5]);
